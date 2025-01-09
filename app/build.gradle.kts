@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.googleServices)
-    alias(libs.plugins.crashlytics)
     alias(libs.plugins.hilt.dagger)
     alias(libs.plugins.compose.compiler)
 
@@ -82,11 +80,6 @@ dependencies {
 
     //LiveData
     implementation(libs.androidx.runtime.livedata)
-
-    //Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytic)
-    implementation(libs.firebase.auth)
 
     //Navigation
     implementation(libs.androidx.navigation.compose)
