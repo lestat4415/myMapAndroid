@@ -60,5 +60,12 @@ class FormLocationViewModel @Inject constructor(
     private fun enableAddLocation(name: String, description: String, type: Int): Boolean =
         name.isNotEmpty() && description.isNotEmpty() && type != -1
 
+    fun resetUiState() {
+        _uiState.update { UiState.Start }
+        _name.value = ""
+        _description.value = ""
+        _type.value = 1
+        _isAddLocationEnable.value = false
+    }
 
 }

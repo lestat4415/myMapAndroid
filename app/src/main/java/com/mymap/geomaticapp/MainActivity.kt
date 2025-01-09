@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
             navHostController = rememberNavController()
 
             GeomaticAppTheme {
-                MapaApp(
+                MapApp(
                     navHostController = navHostController,
                     mapViewModel = mapViewModel,
                     formViewModel = formViewModel
@@ -61,6 +61,7 @@ class MainActivity : ComponentActivity() {
                 val currentLatLng = LatLng(location.latitude, location.longitude)
                 lifecycleScope.launch {
                     mapViewModel.actualizarUbicacionActual(currentLatLng)
+                    mapViewModel.updateLocationClicked(currentLatLng)
                 }
             }
         }
@@ -68,7 +69,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MapaApp(
+fun MapApp(
     navHostController: NavHostController,
     mapViewModel: MapViewModel,
     formViewModel: FormLocationViewModel
@@ -90,7 +91,5 @@ fun MapaApp(
             mapViewModel = mapViewModel,
             formViewModel = formViewModel
         )
-    } else {
-        //Do something
     }
 }

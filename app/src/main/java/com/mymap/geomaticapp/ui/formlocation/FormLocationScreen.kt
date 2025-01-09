@@ -143,6 +143,7 @@ fun FormLocationScreen(
                 UiState.Success -> {
                     showDialogSuccess = true
                     PositionCreatedDialog(show = showDialogSuccess, onDismiss = {
+                        viewModel.resetUiState()
                         backPressed()
                         showDialogSuccess = false
                     })

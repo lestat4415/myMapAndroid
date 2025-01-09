@@ -25,7 +25,7 @@ import com.mymap.geomaticapp.ui.theme.AllWhite
 @Preview(showSystemUi = true)
 @Composable
 fun ShowPreviewInfoWindow() {
-    MarkerInfoWindowCustom(position = Positions("", 0.0, 0.0, "", "Test name", "", 1))
+    MarkerInfoWindowCustom(position = Positions("", 0.0, 01.0, "22der5ttttraEsto es una prueba con una descripción muy larga", "Test name", "", 1))
 }
 
 @Composable
@@ -61,6 +61,11 @@ fun MarkerInfoWindowCustom(position: Positions) {
                     )
                     Text(
                         text = "Coordenadas: ${position.lat}, ${position.long}",
+                        color = AllWhite,
+                        fontSize = 16.sp
+                    )
+                    Text(
+                        text = "Descripción: ${position.description}",
                         color = AllWhite,
                         fontSize = 16.sp
                     )
